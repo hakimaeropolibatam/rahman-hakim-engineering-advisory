@@ -23,6 +23,12 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-
 @media(max-width:980px){.nav{gap:13px}.nav a{font-size:.7rem}.brand{width:215px}.header{gap:10px}.hero-grid{grid-template-columns:1fr 1fr}.about-grid{gap:35px}.services-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){html{scroll-padding-top:70px}.wrap{width:min(100% - 36px,1160px)}.section{padding:70px 0}.header{min-height:72px}.brand{width:218px}.nav{display:none;position:absolute;top:72px;left:0;right:0;padding:20px 25px 26px;background:white;box-shadow:0 20px 25px #1a293323;flex-direction:column;align-items:flex-start;gap:16px}.nav.open{display:flex}.menu{display:block}.hero-grid{grid-template-columns:1fr;padding:65px 0 45px;gap:35px}.hero h1{font-size:clamp(2.95rem,9vw,4.1rem)}.hero-visual svg{max-width:400px}.hero-code{margin-top:25px}.proof{grid-template-columns:1fr;gap:20px}.section-intro{grid-template-columns:1fr;gap:6px}.services-grid,.applications .application-grid,.steps,.about-grid,.principle-grid,.contact-grid{grid-template-columns:1fr}.service{min-height:255px}.service .top{margin-bottom:24px}.steps{gap:20px;margin-top:30px}.step-no{padding-bottom:8px}.step h3{margin:15px 0 5px}.about-panel{min-height:360px}.about-symbol{height:190px}.footer-grid{align-items:flex-start;flex-direction:column;gap:14px}.contact-card{padding:25px}.contact-grid{gap:35px}.header-right{gap:7px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Portfolio reference directory */
+.portfolio{background:#f6f7f8}.portfolio-toolbar{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin:0 0 26px}.portfolio-filters{display:flex;flex-wrap:wrap;gap:8px}.portfolio-filter{border:1px solid #d8dde1;background:#fff;color:#26303a;padding:9px 16px;font-size:.81rem;font-weight:800}.portfolio-filter[aria-pressed="true"]{background:#92162a;color:#fff;border-color:#92162a}.portfolio-select{min-height:42px;padding:8px 13px;background:white;border:1px solid #d8dde1;color:#26303a;font:600 .81rem var(--sans)}.portfolio-count{font-size:.76rem;color:#6b747d;margin-bottom:20px}.portfolio-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.portfolio-item{background:#fff;border:1px solid #e2e6ea;border-top:3px solid #c7243f;padding:25px;display:flex;flex-direction:column;min-height:222px;word-break:normal}.portfolio-item.fire{border-top-color:#d71f38}.portfolio-item .meta{display:flex;justify-content:space-between;gap:12px;color:#8b939b;font-size:.73rem;font-weight:800;letter-spacing:.07em}.portfolio-item .meta .kind{color:#af2136}.portfolio-item h3{font-size:1.1rem;margin:19px 0 8px;letter-spacing:-.02em;overflow-wrap:anywhere}.portfolio-item p{font-size:.8rem;margin:0 0 14px}.portfolio-item .status{display:inline-flex;align-self:start;margin-top:auto;border:1px solid #e8e9eb;padding:5px 8px;color:#66717b;font-size:.67rem;font-weight:700}.portfolio-note{font-size:.8rem;color:#68727b;border-left:3px solid #b5263c;padding-left:14px;margin-top:24px;max-width:960px}.portfolio-more{margin:30px auto 0;display:flex}.portfolio-empty{color:#69737c;margin-top:20px}.portfolio-intro-stat{display:flex;gap:15px;flex-wrap:wrap;margin-bottom:30px}.portfolio-intro-stat span{font-size:.74rem;color:#7c858e}.portfolio-intro-stat strong{color:#b31c36}.portfolio-manual{font-size:.8rem;color:#7c858e;margin-top:12px}
+@media(max-width:900px){.portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.portfolio-grid{grid-template-columns:1fr}.portfolio-item{min-height:185px}.portfolio-toolbar{align-items:stretch}.portfolio-select{width:100%}}
+
 </style>
 </head>
 <body>
@@ -35,6 +41,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-
 <nav class="nav" id="navigation" aria-label="Primary navigation">
 <a href="#expertise" data-en="Expertise" data-id="Keahlian">Expertise</a>
 <a href="#applications" data-en="Applications" data-id="Penerapan">Applications</a>
+<a href="#portfolio" data-en="Portfolio" data-id="Portofolio">Portfolio</a>
 <a href="#approach" data-en="Approach" data-id="Pendekatan">Approach</a>
 <a href="#about" data-en="About" data-id="Profil">About</a>
 <a href="#contact" data-en="Contact" data-id="Kontak">Contact</a>
@@ -75,6 +82,30 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-
 <article class="app"><div class="app-visual"><svg viewBox="0 0 300 180" fill="none"><circle cx="140" cy="84" r="54" stroke="#7f8e99" stroke-width="3"/><circle cx="140" cy="84" r="31" stroke="#c32135" stroke-width="3"/><path d="M164 125L205 165M140 27V141M82 84H198" stroke="#aab4bd" stroke-width="3"/><path d="m126 92 12 12 23-31" stroke="#c32135" stroke-width="5"/></svg></div><div class="app-body"><span class="eyebrow">MEP FORENSICS</span><h3 data-en="Mechanical system failure investigation" data-id="Investigasi kegagalan sistem mekanikal">Mechanical system failure investigation</h3><details><summary data-en="View typical scope" data-id="Lihat ruang lingkup">View typical scope</summary><ul><li>Documented technical evidence</li><li>Failure and contributing factors</li><li>Remedial engineering options</li></ul></details></div></article>
 <article class="app"><div class="app-visual"><svg viewBox="0 0 300 180" fill="none"><rect x="70" y="15" width="155" height="145" stroke="#7f8e99" stroke-width="2"/><path d="M70 63H225M70 111H225M121 15V160M173 15V160" stroke="#c3cbd0"/><rect x="121" y="63" width="52" height="48" fill="#ebc7cc"/><rect x="173" y="111" width="52" height="49" fill="#c32135" opacity=".85"/><path d="m220 60 14 14m0-14-14 14" stroke="#c32135" stroke-width="3"/></svg></div><div class="app-body"><span class="eyebrow">RISK ADVISORY</span><h3 data-en="Evidence-based risk prioritization" data-id="Prioritisasi risiko berbasis bukti">Evidence-based risk prioritization</h3><details><summary data-en="View typical scope" data-id="Lihat ruang lingkup">View typical scope</summary><ul><li>Hazards and consequences</li><li>Risk tolerability assessment</li><li>Practical mitigation prioritization</li></ul></details></div></article>
 </div></div></section>
+
+<section class="portfolio section" id="portfolio">
+<div class="wrap">
+<div class="section-intro">
+<div><div class="eyebrow" data-en="SELECTED PROJECT REFERENCES" data-id="REFERENSI PEKERJAAN">SELECTED PROJECT REFERENCES</div>
+<h2><span data-en="Professional project" data-id="Referensi pekerjaan">Professional project</span><br><span class="muted" data-en="reference directory." data-id="profesional.">reference directory.</span></h2></div>
+<p data-en="A structured, year-only directory of MEP technical-review records and fire protection project references provided by the principal. It is not a list of verified completed contracts or regulatory approvals." data-id="Daftar referensi berbasis tahun dari catatan penelaahan teknis MEP dan proyek fire protection yang diberikan principal. Ini bukan daftar kontrak selesai atau persetujuan regulasi yang telah diverifikasi.">A structured, year-only directory of MEP technical-review records and fire protection project references provided by the principal. It is not a list of verified completed contracts or regulatory approvals.</p>
+</div>
+<div class="portfolio-intro-stat"><span><strong id="portfolioTotal">60</strong> <span data-en="project references" data-id="referensi pekerjaan">project references</span></span><span><strong>57</strong> MEP</span><span><strong>3</strong> Fire Protection</span><span><strong>2022–2026</strong></span></div>
+<div class="portfolio-toolbar">
+<div class="portfolio-filters" role="group" aria-label="Portfolio category">
+<button type="button" class="portfolio-filter" data-portfolio-filter="all" aria-pressed="true" data-en="All references" data-id="Semua referensi">All references</button>
+<button type="button" class="portfolio-filter" data-portfolio-filter="MEP" aria-pressed="false">MEP</button>
+<button type="button" class="portfolio-filter" data-portfolio-filter="FIRE" aria-pressed="false">Fire Protection</button>
+</div>
+<label for="portfolioYear"><span data-en="Year" data-id="Tahun">Year</span>:
+<select class="portfolio-select" id="portfolioYear"><option value="all" data-en="All years" data-id="Semua tahun">All years</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option></select></label></div>
+<div id="portfolioCount" class="portfolio-count" aria-live="polite"></div>
+<div id="portfolioGrid" class="portfolio-grid"></div>
+<p id="portfolioEmpty" class="portfolio-empty" hidden data-en="No matching project references." data-id="Tidak ada referensi yang sesuai.">No matching project references.</p>
+<button id="portfolioMore" class="btn btn-border portfolio-more" type="button" data-en="Show more references" data-id="Tampilkan referensi lainnya">Show more references</button>
+<p class="portfolio-note" data-en="Individual clients are anonymized. Organization names identify references, not endorsements. Entries noted as document-only verification do not imply a hearing or site inspection. Scope and outcomes must be checked against the underlying records before public claims are made." data-id="Nama klien perorangan disamarkan. Nama organisasi adalah referensi, bukan dukungan atau testimoni. Entri verifikasi berkas tidak berarti telah dilaksanakan sidang atau inspeksi lapangan. Lingkup dan hasil perlu dikonfirmasi dari dokumen sumber sebelum dipublikasikan sebagai klaim.">Individual clients are anonymized. Organization names identify references, not endorsements. Entries noted as document-only verification do not imply a hearing or site inspection. Scope and outcomes must be checked against the underlying records before public claims are made.</p>
+<p class="portfolio-manual" data-en="To update these records, edit data/portfolio.js in the GitHub repository." data-id="Untuk memperbarui data, edit data/portfolio.js pada repository GitHub.">To update these records, edit data/portfolio.js in the GitHub repository.</p>
+</div></section>
 <section class="approach section" id="approach"><div class="wrap"><div class="eyebrow" data-en="HOW WE WORK" data-id="CARA KERJA">HOW WE WORK</div><h2><span data-en="Engineering rigor," data-id="Ketelitian rekayasa,">Engineering rigor,</span><br><span data-en="from question to decision." data-id="dari masalah hingga keputusan.">from question to decision.</span></h2><p data-en="A disciplined process tailored to the system, available evidence and intended decision." data-id="Proses terstruktur sesuai sistem, bukti yang tersedia, dan keputusan yang dibutuhkan.">A disciplined process tailored to the system, available evidence and intended decision.</p><div class="steps">
 <div class="step"><div class="step-no">01</div><h3 data-en="Define" data-id="Definisikan">Define</h3><p data-en="Clarify the decision, scope, system boundaries and criteria." data-id="Menentukan keputusan, lingkup, batas sistem, dan kriteria.">Clarify the decision, scope, system boundaries and criteria.</p></div>
 <div class="step"><div class="step-no">02</div><h3 data-en="Examine" data-id="Periksa">Examine</h3><p data-en="Review drawings, records, site conditions and tests." data-id="Menelaah gambar, rekaman, kondisi lapangan, dan pengujian.">Review drawings, records, site conditions and tests.</p></div>
@@ -100,6 +131,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-
 <section class="contact section" id="contact"><div class="wrap contact-grid"><div><div class="eyebrow" data-en="START A CONVERSATION" data-id="MULAI DISKUSI">START A CONVERSATION</div><h2><span data-en="Complex engineering issue?" data-id="Ada persoalan teknik?">Complex engineering issue?</span><br><span data-en="Let's establish the facts." data-id="Mari periksa faktanya.">Let's establish the facts.</span></h2><p data-en="Describe your engineering system, question and intended decision. Initial discussion is handled directly via WhatsApp or email." data-id="Jelaskan sistem, persoalan teknik, dan keputusan yang dibutuhkan. Diskusi awal dilakukan langsung melalui WhatsApp atau email.">Describe your engineering system, question and intended decision. Initial discussion is handled directly via WhatsApp or email.</p><div class="contact-actions"><a class="btn btn-white" href="https://wa.me/6282388311280?text=Hello%20Rahman%20Hakim%20Engineering%20Advisory.%20I%20would%20like%20to%20discuss%20an%20engineering%20assessment." target="_blank" rel="noopener" data-en="Message on WhatsApp ↗" data-id="Hubungi via WhatsApp ↗">Message on WhatsApp ↗</a><a class="btn btn-outline-white" href="mailto:rh.eng.advisory@outlook.com?subject=Engineering%20Advisory%20Inquiry" data-en="Send an email ↗" data-id="Kirim email ↗">Send an email ↗</a></div></div><div class="contact-card"><strong data-en="DIRECT CONTACT" data-id="KONTAK LANGSUNG">DIRECT CONTACT</strong><div class="rule"></div><small>PHONE / WHATSAPP</small><a href="tel:+6282388311280">+62 823 8831 1280</a><div class="rule"></div><small>EMAIL</small><a href="mailto:rh.eng.advisory@outlook.com">rh.eng.advisory@outlook.com</a><div class="rule"></div><p style="font-size:.83rem" data-en="No online form or account is required. Discuss project information privately via your preferred channel." data-id="Tanpa formulir atau akun online. Informasi proyek dapat didiskusikan secara privat melalui kanal pilihan Anda.">No online form or account is required. Discuss project information privately via your preferred channel.</p></div></div></section>
 </main>
 <footer class="footer"><div class="wrap footer-grid"><div><strong>RAHMAN HAKIM</strong><div style="font-size:.7rem;letter-spacing:.16em">ENGINEERING ADVISORY</div></div><div><p>Independent Judgment. Evidence-Based Engineering.</p><small>© <span id="year">2026</span> Rahman Hakim Engineering Advisory.</small></div><a href="#top" style="font-size:.8rem;font-weight:700" data-en="Back to top ↑" data-id="Kembali ke atas ↑">Back to top ↑</a></div></footer>
+<script src="data/portfolio.js"></script>
 <script>
 const language=document.getElementById('language');
 let lang='en';
@@ -108,11 +140,53 @@ language.addEventListener('click',()=>{
  document.documentElement.lang=lang;
  document.querySelectorAll('[data-en][data-id]').forEach(node=>node.textContent=node.dataset[lang]);
  language.textContent=lang==='en'?'ID':'EN';
+ renderPortfolio();
  language.setAttribute('aria-label',lang==='en'?'Switch to Indonesian':'Switch to English');
 });
 const menu=document.getElementById('menu'),nav=document.getElementById('navigation');
 menu.addEventListener('click',()=>{let opened=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(opened));menu.textContent=opened?'×':'☰'});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));
 document.getElementById('year').textContent=new Date().getFullYear();
+
+const portfolioGrid=document.getElementById('portfolioGrid');
+const portfolioCount=document.getElementById('portfolioCount');
+const portfolioYear=document.getElementById('portfolioYear');
+const portfolioMore=document.getElementById('portfolioMore');
+const portfolioEmpty=document.getElementById('portfolioEmpty');
+let portfolioCategory='all', portfolioVisible=12;
+function renderPortfolio(){
+  if(!window.RH_PORTFOLIO) return;
+  const matched=window.RH_PORTFOLIO.filter(item=>(portfolioCategory==='all'||item.discipline===portfolioCategory)&&(portfolioYear.value==='all'||String(item.year)===portfolioYear.value));
+  matched.sort((a,b)=>b.year-a.year||(a.discipline==='FIRE'?-1:b.discipline==='FIRE'?1:0)||a.id.localeCompare(b.id));
+  portfolioGrid.replaceChildren();
+  matched.slice(0,portfolioVisible).forEach(item=>{
+    const article=document.createElement('article');article.className='portfolio-item'+(item.discipline==='FIRE'?' fire':'');
+    const meta=document.createElement('div');meta.className='meta';
+    const kind=document.createElement('span');kind.className='kind';kind.textContent=item.discipline==='FIRE'?'FIRE PROTECTION':'MEP REFERENCE';
+    const year=document.createElement('span');year.textContent=String(item.year);meta.append(kind,year);article.append(meta);
+    const title=document.createElement('h3');title.textContent=item.reference==='Private client'?(lang==='id'?'Klien perorangan':'Private client'):item.reference;article.append(title);
+    const p=document.createElement('p');p.textContent=lang==='id'?item.facility_id:item.facility_en;article.append(p);
+    const status=document.createElement('span');status.className='status';
+    const statuses={
+      document:['Verifikasi berkas (tanpa sidang)','Document-only verification'],
+      scheduled:['Catatan jadwal penelaahan','Scheduled review reference'],
+      record:['Referensi pekerjaan','Project reference'],
+      scope_unspecified:['Lingkup belum dirinci','Scope not supplied']
+    };
+    const label=statuses[item.activity]||statuses.record;status.textContent=label[lang==='id'?0:1];article.append(status);
+    portfolioGrid.append(article);
+  });
+  portfolioCount.textContent=(lang==='id'? 'Menampilkan ':'Showing ')+Math.min(portfolioVisible,matched.length)+(lang==='id'?' dari ':' of ')+matched.length+(lang==='id'?' referensi':' references');
+  portfolioMore.hidden=matched.length<=portfolioVisible;
+  portfolioEmpty.hidden=matched.length!==0;
+}
+document.querySelectorAll('[data-portfolio-filter]').forEach(button=>button.addEventListener('click',()=>{
+ portfolioCategory=button.dataset.portfolioFilter;portfolioVisible=12;
+ document.querySelectorAll('[data-portfolio-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+ renderPortfolio();
+}));
+portfolioYear.addEventListener('change',()=>{portfolioVisible=12;renderPortfolio()});
+portfolioMore.addEventListener('click',()=>{portfolioVisible+=12;renderPortfolio()});
+renderPortfolio();
 </script>
 </body></html>
