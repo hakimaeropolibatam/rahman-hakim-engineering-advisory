@@ -41,7 +41,7 @@ Alternatively, the repository can be used as the source of an independently host
 
 ## Updating
 
-Edit `index.html` to revise the text, page layout, or contact information. Update `assets/rahman-hakim-logo.svg` if a finalized vector logo becomes available. The initial SVG mark is a **web-optimized approximation**, not a vector conversion of the original approved PNG.
+Edit `index.html` to revise the text, page layout, or contact information. The navbar, about panel and favicon use `assets/rahman-hakim-official-symbol.png`, the principal's original supplied PNG. Keep this file unchanged in shape and color when updating the brand.
 
 **Contact:** rh.eng.advisory@outlook.com / +62 823 8831 1280.
 
@@ -71,3 +71,7 @@ For **Cloudflare Workers Builds**:
 The `scripts/build.mjs` file copies the source HTML, public logo, favicon and portfolio dataset to `dist/`, which Wrangler serves as static assets. This build intentionally excludes internal reference files.
 
 **Caution:** Connecting this repo and deploying it to an existing Worker replaces the Worker's currently deployed website. Review the live site and account settings first, and retain a backup if it includes additional features not present in this repo. This ChatGPT workflow can edit GitHub but cannot confirm Cloudflare credentials, settings or completed deploys without direct Cloudflare access.
+
+## Official logo asset
+
+Website uses the original uploaded **fire-and-buildings symbol PNG** at `assets/rahman-hakim-official-symbol.png`, paired with live typography for the `RAHMAN HAKIM / ENGINEERING ADVISORY` wordmark. The earlier approximate SVG is not used by the website build.
