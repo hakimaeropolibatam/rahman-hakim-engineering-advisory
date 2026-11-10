@@ -46,3 +46,28 @@ Edit `index.html` to revise the text, page layout, or contact information. Updat
 **Contact:** rh.eng.advisory@outlook.com / +62 823 8831 1280.
 
 **Important:** Credentials on the site are based on information provided by the principal. Check professional registration, validity, and scope of authorization before any regulated engagement.
+
+## Portfolio editing and Cloudflare Workers deployment
+
+Portfolio entries are maintained in `data/portfolio.js`, separate from the webpage layout in `index.html`.
+
+- Records contain **year only**, not dates/times. There are 57 MEP references and 3 fire protection references from 2022-2026.
+- Private individuals are anonymized in the public dataset. All descriptions and roles must be reviewed against supporting records before making case-study claims.
+- The site shows 12 references at a time, and visitors can filter by MEP/Fire Protection and by year.
+- The year 2026 group contains 9 MEP and 3 fire protection references.
+
+### Publish changes to the existing Cloudflare Worker
+
+Existing Worker URL supplied by the site owner: `https://summer-fire-6da6.hakim-aeropolibatam.workers.dev/`.
+
+For **Cloudflare Workers Builds**:
+
+1. Open Cloudflare dashboard > Workers & Pages > **summer-fire-6da6**.
+2. Go to **Settings > Builds > Connect** if Git integration is not yet connected.
+3. Choose GitHub repo `hakimaeropolibatam/rahman-hakim-engineering-advisory`, production branch `main`.
+4. Set the build command to `npm run build`, deploy command to `npx wrangler deploy`. Check that the Worker name in Cloudflare matches `wrangler.toml` (`summer-fire-6da6`).
+5. Save settings, trigger a build (or push a new Git commit), and inspect deployment logs before checking the URL above with `#portfolio`.
+
+The `scripts/build.mjs` file copies the source HTML, public logo, favicon and portfolio dataset to `dist/`, which Wrangler serves as static assets. This build intentionally excludes internal reference files.
+
+**Caution:** Connecting this repo and deploying it to an existing Worker replaces the Worker's currently deployed website. Review the live site and account settings first, and retain a backup if it includes additional features not present in this repo. This ChatGPT workflow can edit GitHub but cannot confirm Cloudflare credentials, settings or completed deploys without direct Cloudflare access.
