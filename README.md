@@ -1,5 +1,20 @@
 # Rahman Hakim Engineering Advisory
 
+## Publish live for free (Render)
+
+[**Deploy website to Render — click here**](https://render.com/deploy?repo=https://github.com/hakimaeropolibatam/rahman-hakim-engineering-advisory)
+
+This deploy shortcut reads the checked-in `render.yaml`, creates a free static site, and publishes to an `*.onrender.com` address after the owner signs in and approves the deployment. No API keys or credit-card information should be posted to GitHub or in chat.
+
+1. Click the deployment link above and sign in to Render.
+2. Authorize the public GitHub repository if requested.
+3. Review the single static service named `rahman-hakim-engineering-advisory`.
+4. Confirm **Deploy Blueprint**; then open the assigned public URL from the Render dashboard.
+5. Confirm the live page shows the services and that WhatsApp/email links work.
+
+Note: Render free static sites have monthly bandwidth/build-minute allowances. Update the repository on branch `main` to trigger future automatic deployments when Git integration is active.
+
+
 Official website source for **Rahman Hakim Engineering Advisory**, a principal-led technical advisory practice.
 
 **Brand promise:** *Independent Judgment. Evidence-Based Engineering.*
