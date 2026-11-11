@@ -41,7 +41,7 @@ Alternatively, the repository can be used as the source of an independently host
 
 ## Updating
 
-Edit `index.html` to revise the text, page layout, or contact information. The navbar, about panel and favicon use `assets/rahman-hakim-official-symbol.png`, the principal's original supplied PNG. Keep this file unchanged in shape and color when updating the brand.
+Edit `index.html` to revise the text, page layout, or contact information. The navbar and favicon use `assets/rahman-hakim-official-symbol.png`, the principal's supplied logo; About the Principal uses `assets/rahman-hakim-profile.jpg`. Keep this file unchanged in shape and color when updating the brand.
 
 **Contact:** rh.eng.advisory@outlook.com / +62 823 8831 1280.
 
@@ -75,3 +75,12 @@ The `scripts/build.mjs` file copies the source HTML, public logo, favicon and po
 ## Official logo asset
 
 Website uses the original uploaded **fire-and-buildings symbol PNG** at `assets/rahman-hakim-official-symbol.png`, paired with live typography for the `RAHMAN HAKIM / ENGINEERING ADVISORY` wordmark. The earlier approximate SVG is not used by the website build.
+
+## Trainer & Professional Credentials
+
+The portfolio now includes a distinct **Trainer & Credentials** filter, without conflating qualifications with delivered training jobs. Data: `data/trainer.js` (29 provided records in 5 practice areas: fire/emergency, OHS/risk, mechanical/building/construction, digital design/manufacturing, and teaching). The MEP project cards are labelled `MEP Project`.
+
+- Dates in the **project directory** are reduced to years only; credential entries show reported issue month/year, stated expiry, and identifiers where supplied.
+- Three credentials have an expiry before November 2026 and are flagged as historic/expired using the visitor's current date. Unspecified expiry does not mean confirmed active status.
+- This listing indicates expertise relevant to training, **not verified trainer employment, course-delivery records, trainer accreditation, or active regulated-course permission**.
+- For the GitHub → Cloudflare Workers build, `npm run build` must run before `npx wrangler deploy` so `dist/data/trainer.js` is included.
