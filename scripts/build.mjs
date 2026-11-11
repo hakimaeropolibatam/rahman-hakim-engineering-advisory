@@ -5,4 +5,5 @@ await mkdir('dist/data', { recursive: true });
 await cp('index.html', 'dist/index.html');
 await cp('assets', 'dist/assets', { recursive: true });
 await cp('data/portfolio.js', 'dist/data/portfolio.js');
-console.log('Static website built with official logo, principal portrait, and portfolio.');
+await cp('data/trainer.js', 'dist/data/trainer.js');
+console.log('Static site built with official branding, project portfolio, and trainer qualifications.');
