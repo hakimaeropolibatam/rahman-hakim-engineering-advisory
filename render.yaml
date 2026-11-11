@@ -6,6 +6,6 @@ services:
     name: rahman-hakim-engineering-advisory
     repo: https://github.com/hakimaeropolibatam/rahman-hakim-engineering-advisory
     branch: main
-    buildCommand: mkdir -p public/assets && cp index.html public/ && cp assets/rahman-hakim-official-symbol.png public/assets/ && mkdir -p public/data && cp data/portfolio.js public/data/
-    staticPublishPath: ./public
+    buildCommand: node scripts/build.mjs
+    staticPublishPath: ./dist
     autoDeployTrigger: commit
