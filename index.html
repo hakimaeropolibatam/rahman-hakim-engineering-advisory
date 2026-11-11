@@ -40,6 +40,25 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-
 .footer-to-top{font-size:.8rem;font-weight:700}
 .footer-linkedin:focus-visible,.footer-to-top:focus-visible,.profile-link:focus-visible{outline:2px solid #b61e35;outline-offset:3px}
 @media(max-width:700px){.footer-actions{gap:24px}.profile-link{font-size:.78rem}}
+
+/* Trainer competence directory */
+#trainerPanel[hidden],#portfolioProjects[hidden],#portfolioYearWrap[hidden]{display:none!important}
+.trainer-panel{padding-top:18px}.trainer-introduction{display:flex;gap:32px;justify-content:space-between;align-items:center;padding:27px 30px;background:#fff;border-left:4px solid #b41b33;margin-bottom:24px}
+.trainer-introduction h3{font-size:clamp(1.2rem,2.3vw,1.7rem);margin:13px 0 10px;letter-spacing:-.025em}.trainer-introduction p{max-width:790px;font-size:.86rem;margin-bottom:0}
+.trainer-intro-number{text-align:center;min-width:100px}.trainer-intro-number strong{font-size:2.6rem;line-height:1;color:#b41b33;display:block}.trainer-intro-number small{font-size:.7rem;color:#68727c;display:block;margin-top:8px}
+.trainer-toolbar{display:flex;gap:24px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:26px}.trainer-toolbar label{font-size:.82rem;font-weight:750;color:#34404a;display:flex;gap:12px;align-items:center}.trainer-toolbar .portfolio-count{margin:0}
+.trainer-groups{display:flex;flex-direction:column;gap:30px}.trainer-group{scroll-margin-top:95px}.trainer-group-heading{border-bottom:1px solid #d7dce1;padding:0 0 15px;margin-bottom:16px;display:flex;align-items:start;gap:20px;justify-content:space-between}
+.trainer-group-heading h3{font-size:1.22rem;margin:0 0 5px;letter-spacing:-.025em}.trainer-group-heading p{font-size:.8rem;max-width:760px;margin:0}.trainer-group-heading .group-count{color:#a41d33;font-size:.74rem;white-space:nowrap;font-weight:800}
+.credential-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.credential-card{background:#fff;border:1px solid #e0e4e8;padding:21px 23px;min-width:0;overflow-wrap:anywhere}
+.credential-card h4{font-size:.99rem;line-height:1.38;letter-spacing:-.012em;margin:0 0 8px;color:#26303a}
+.credential-issuer{font-size:.8rem;color:#68727c;margin:0 0 12px}
+.credential-data{display:flex;flex-wrap:wrap;gap:7px 15px;align-items:center;font-size:.72rem;color:#53606b}
+.credential-data span{display:inline-block}.credential-id{font-size:.72rem;color:#69737c;overflow-wrap:anywhere;margin:10px 0 0}
+.credential-skills{font-size:.73rem;color:#68737c;margin:9px 0 0}.credential-status{display:inline-flex;align-items:center;padding:3px 8px;border:1px solid #dde2e5;font-size:.68rem;font-weight:700;color:#5b6570;background:#f8f9fa}
+.credential-status.expired{color:#9c2733;background:#fff2f3;border-color:#efc4ca}
+@media(max-width:700px){.trainer-introduction{padding:21px;align-items:flex-start}.trainer-intro-number{min-width:58px}.trainer-intro-number strong{font-size:2rem}.credential-grid{grid-template-columns:1fr}.trainer-group-heading{flex-wrap:wrap;gap:7px}.trainer-toolbar,.trainer-toolbar label{align-items:stretch}.trainer-toolbar label{flex-wrap:wrap}.trainer-toolbar select{width:100%}}
+
 </style>
 </head>
 <body>
@@ -97,25 +116,48 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-
 <section class="portfolio section" id="portfolio">
 <div class="wrap">
 <div class="section-intro">
-<div><div class="eyebrow" data-en="SELECTED PROJECT REFERENCES" data-id="REFERENSI PEKERJAAN">SELECTED PROJECT REFERENCES</div>
-<h2><span data-en="Professional project" data-id="Referensi pekerjaan">Professional project</span><br><span class="muted" data-en="reference directory." data-id="profesional.">reference directory.</span></h2></div>
-<p data-en="A structured, year-only directory of MEP technical-review records and fire protection project references provided by the principal. It is not a list of verified completed contracts or regulatory approvals." data-id="Daftar referensi berbasis tahun dari catatan penelaahan teknis MEP dan proyek fire protection yang diberikan principal. Ini bukan daftar kontrak selesai atau persetujuan regulasi yang telah diverifikasi.">A structured, year-only directory of MEP technical-review records and fire protection project references provided by the principal. It is not a list of verified completed contracts or regulatory approvals.</p>
+<div><div class="eyebrow" data-en="PROJECT & TRAINER DIRECTORY" data-id="DIREKTORI PROYEK & TRAINER">PROJECT & TRAINER DIRECTORY</div>
+<h2><span data-en="Professional Project and" data-id="Direktori Referensi Proyek dan">Professional Project and</span><br><span class="muted" data-en="Trainer Reference Directory." data-id="Trainer Profesional.">Trainer Reference Directory.</span></h2></div>
+<p data-en="Browse MEP and fire protection project references (year only), alongside professional credentials grouped by potential trainer subject area. Qualifications are not evidence of completed training assignments." data-id="Telusuri referensi proyek MEP dan proteksi kebakaran (hanya tahun), serta kredensial profesional menurut bidang kompetensi yang relevan untuk trainer. Sertifikasi bukan bukti penugasan pelatihan yang telah dilakukan.">Browse MEP and fire protection project references (year only), alongside professional credentials grouped by potential trainer subject area. Qualifications are not evidence of completed training assignments.</p>
 </div>
-<div class="portfolio-intro-stat"><span><strong id="portfolioTotal">60</strong> <span data-en="project references" data-id="referensi pekerjaan">project references</span></span><span><strong>57</strong> MEP</span><span><strong>3</strong> Fire Protection</span><span><strong>2022–2026</strong></span></div>
+<div class="portfolio-intro-stat"><span><strong id="portfolioTotal">60</strong> <span data-en="project references" data-id="referensi pekerjaan">project references</span></span><span><strong>57</strong> MEP Project</span><span><strong>3</strong> Fire Protection</span><span><strong>29</strong> <span data-en="professional credentials" data-id="kredensial profesional">professional credentials</span></span><span><strong>2022–2026</strong></span></div>
 <div class="portfolio-toolbar">
 <div class="portfolio-filters" role="group" aria-label="Portfolio category">
 <button type="button" class="portfolio-filter" data-portfolio-filter="all" aria-pressed="true" data-en="All references" data-id="Semua referensi">All references</button>
-<button type="button" class="portfolio-filter" data-portfolio-filter="MEP" aria-pressed="false">MEP</button>
+<button type="button" class="portfolio-filter" data-portfolio-filter="MEP" aria-pressed="false">MEP Project</button>
 <button type="button" class="portfolio-filter" data-portfolio-filter="FIRE" aria-pressed="false">Fire Protection</button>
+<button type="button" class="portfolio-filter" data-portfolio-filter="TRAINER" aria-pressed="false" data-en="Trainer & Credentials" data-id="Trainer & Sertifikasi">Trainer & Credentials</button>
 </div>
-<label for="portfolioYear"><span data-en="Year" data-id="Tahun">Year</span>:
+<label id="portfolioYearWrap" for="portfolioYear"><span data-en="Year" data-id="Tahun">Year</span>:
 <select class="portfolio-select" id="portfolioYear"><option value="all" data-en="All years" data-id="Semua tahun">All years</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option></select></label></div>
+<div id="portfolioProjects">
 <div id="portfolioCount" class="portfolio-count" aria-live="polite"></div>
 <div id="portfolioGrid" class="portfolio-grid"></div>
 <p id="portfolioEmpty" class="portfolio-empty" hidden data-en="No matching project references." data-id="Tidak ada referensi yang sesuai.">No matching project references.</p>
 <button id="portfolioMore" class="btn btn-border portfolio-more" type="button" data-en="Show more references" data-id="Tampilkan referensi lainnya">Show more references</button>
 <p class="portfolio-note" data-en="Individual clients are anonymized. Organization names identify references, not endorsements. Entries noted as document-only verification do not imply a hearing or site inspection. Scope and outcomes must be checked against the underlying records before public claims are made." data-id="Nama klien perorangan disamarkan. Nama organisasi adalah referensi, bukan dukungan atau testimoni. Entri verifikasi berkas tidak berarti telah dilaksanakan sidang atau inspeksi lapangan. Lingkup dan hasil perlu dikonfirmasi dari dokumen sumber sebelum dipublikasikan sebagai klaim.">Individual clients are anonymized. Organization names identify references, not endorsements. Entries noted as document-only verification do not imply a hearing or site inspection. Scope and outcomes must be checked against the underlying records before public claims are made.</p>
 <p class="portfolio-manual" data-en="To update these records, edit data/portfolio.js in the GitHub repository." data-id="Untuk memperbarui data, edit data/portfolio.js pada repository GitHub.">To update these records, edit data/portfolio.js in the GitHub repository.</p>
+</div>
+
+<div id="trainerPanel" class="trainer-panel" hidden>
+  <div class="trainer-introduction">
+    <div><div class="eyebrow" data-en="TRAINER EXPERTISE & PROFESSIONAL CREDENTIALS" data-id="KEAHLIAN TRAINER & KREDENSIAL PROFESIONAL">TRAINER EXPERTISE & PROFESSIONAL CREDENTIALS</div>
+    <h3 data-en="Competence-led training and technical knowledge areas" data-id="Bidang pengetahuan teknis dan kompetensi pelatihan">Competence-led training and technical knowledge areas</h3>
+    <p data-en="The directory groups qualifications by relevant subject area. Formal trainer appointments, course delivery records and training outcomes have not been supplied and are not claimed." data-id="Direktori mengelompokkan kualifikasi sesuai bidang keahlian. Data penugasan trainer, riwayat penyelenggaraan pelatihan, dan hasil pelatihan belum diberikan dan tidak diklaim.">The directory groups qualifications by relevant subject area. Formal trainer appointments, course delivery records and training outcomes have not been supplied and are not claimed.</p></div>
+    <div class="trainer-intro-number"><strong>29</strong><small data-en="Credential records · 5 areas" data-id="Data sertifikasi · 5 bidang">Credential records · 5 areas</small></div>
+  </div>
+  <div class="trainer-toolbar">
+    <label for="trainerDomain"><span data-en="Specialization" data-id="Spesialisasi">Specialization</span>:
+      <select id="trainerDomain" class="portfolio-select">
+        <option value="all" data-en="All professional domains" data-id="Seluruh bidang kompetensi">All professional domains</option>
+      </select>
+    </label>
+    <span id="trainerCount" class="portfolio-count" aria-live="polite"></span>
+  </div>
+  <div id="trainerGroups" class="trainer-groups"></div>
+  <p class="portfolio-note" data-en="Dates and issuing bodies are based on the principal's supplied credential list; independent issuer verification has not been performed. Expired credentials are identified as historical records. Credentials do not automatically establish trainer accreditation or authorization to deliver regulated courses." data-id="Tanggal dan lembaga penerbit bersumber dari daftar sertifikasi yang diberikan principal dan belum diverifikasi secara independen. Sertifikasi kedaluwarsa ditandai sebagai catatan historis. Sertifikasi tidak otomatis membuktikan akreditasi trainer atau kewenangan menyelenggarakan pelatihan yang diatur.">Dates and issuing bodies are based on the principal's supplied credential list; independent issuer verification has not been performed. Expired credentials are identified as historical records. Credentials do not automatically establish trainer accreditation or authorization to deliver regulated courses.</p>
+  <p class="portfolio-manual" data-en="Credential updates: data/trainer.js in GitHub." data-id="Pembaruan sertifikasi: data/trainer.js di GitHub.">Credential updates: data/trainer.js in GitHub.</p>
+</div>
 </div></section>
 <section class="approach section" id="approach"><div class="wrap"><div class="eyebrow" data-en="HOW WE WORK" data-id="CARA KERJA">HOW WE WORK</div><h2><span data-en="Engineering rigor," data-id="Ketelitian rekayasa,">Engineering rigor,</span><br><span data-en="from question to decision." data-id="dari masalah hingga keputusan.">from question to decision.</span></h2><p data-en="A disciplined process tailored to the system, available evidence and intended decision." data-id="Proses terstruktur sesuai sistem, bukti yang tersedia, dan keputusan yang dibutuhkan.">A disciplined process tailored to the system, available evidence and intended decision.</p><div class="steps">
 <div class="step"><div class="step-no">01</div><h3 data-en="Define" data-id="Definisikan">Define</h3><p data-en="Clarify the decision, scope, system boundaries and criteria." data-id="Menentukan keputusan, lingkup, batas sistem, dan kriteria.">Clarify the decision, scope, system boundaries and criteria.</p></div>
@@ -144,6 +186,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-
 </main>
 <footer class="footer"><div class="wrap footer-grid"><div><strong>RAHMAN HAKIM</strong><div style="font-size:.7rem;letter-spacing:.16em">ENGINEERING ADVISORY</div></div><div><p>Independent Judgment. Evidence-Based Engineering.</p><small>© <span id="year">2026</span> Rahman Hakim Engineering Advisory.</small></div><div class="footer-actions"><a class="footer-linkedin" href="https://www.linkedin.com/in/hrhakim/" target="_blank" rel="noopener noreferrer" aria-label="Rahman Hakim on LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.137 1.445-2.137 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.369-1.85 3.601 0 4.267 2.371 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.119 20.452H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z"/></svg><span>LinkedIn</span></a><a href="#top" class="footer-to-top" data-en="Back to top ↑" data-id="Kembali ke atas ↑">Back to top ↑</a></div></div></footer>
 <script src="data/portfolio.js"></script>
+<script src="data/trainer.js"></script>
 <script>
 const language=document.getElementById('language');
 let lang='en';
@@ -153,12 +196,86 @@ language.addEventListener('click',()=>{
  document.querySelectorAll('[data-en][data-id]').forEach(node=>node.textContent=node.dataset[lang]);
  language.textContent=lang==='en'?'ID':'EN';
  renderPortfolio();
+ renderTrainer();
  language.setAttribute('aria-label',lang==='en'?'Switch to Indonesian':'Switch to English');
 });
 const menu=document.getElementById('menu'),nav=document.getElementById('navigation');
 menu.addEventListener('click',()=>{let opened=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(opened));menu.textContent=opened?'×':'☰'});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));
 document.getElementById('year').textContent=new Date().getFullYear();
+
+
+const trainerPanel=document.getElementById('trainerPanel');
+const trainerGroups=document.getElementById('trainerGroups');
+const trainerDomain=document.getElementById('trainerDomain');
+const trainerCount=document.getElementById('trainerCount');
+const portfolioProjects=document.getElementById('portfolioProjects');
+const portfolioYearWrap=document.getElementById('portfolioYearWrap');
+function trainerMonthYear(ym){
+  if(!ym)return '';
+  const match=/^(\d{4})-(\d{2})$/.exec(ym);
+  if(!match)return ym;
+  const monthsEn=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const monthsId=['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+  const n=Number(match[2])-1;
+  return (lang==='id'?monthsId[n]:monthsEn[n])+' '+match[1];
+}
+function appendText(tag,className,value,parent){
+  const e=document.createElement(tag);
+  if(className)e.className=className;
+  e.textContent=value;
+  parent.append(e);
+  return e;
+}
+function renderTrainer(){
+  if(!window.RH_TRAINER_DIRECTORY)return;
+  const directory=window.RH_TRAINER_DIRECTORY;
+  const groupKey=trainerDomain.value;
+  const groups=directory.categories.filter(c=>groupKey==='all'||groupKey===c.key);
+  trainerGroups.replaceChildren();
+  const today=new Date();
+  const currentMonth=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0');
+  let total=0;
+  for(const group of groups){
+    const found=directory.credentials.filter(c=>c.cat===group.key);
+    total+=found.length;
+    const section=document.createElement('section');section.className='trainer-group';
+    const heading=document.createElement('div');heading.className='trainer-group-heading';
+    const info=document.createElement('div');
+    appendText('h3','',lang==='id'?group.name_id:group.name_en,info);
+    appendText('p','',lang==='id'?group.competence_id:group.competence_en,info);
+    heading.append(info);
+    appendText('span','group-count',found.length+(lang==='id'?' kredensial':' credentials'),heading);
+    section.append(heading);
+    const grid=document.createElement('div');grid.className='credential-grid';
+    for(const credential of found){
+      const card=document.createElement('article');card.className='credential-card';
+      appendText('h4','',credential.title,card);
+      appendText('p','credential-issuer',credential.issuer,card);
+      const data=document.createElement('div');data.className='credential-data';
+      appendText('span','',(lang==='id'?'Diterbitkan: ':'Issued: ')+trainerMonthYear(credential.issued),data);
+      if(credential.expires)appendText('span','',(lang==='id'?'Berlaku hingga: ':'Stated expiry: ')+trainerMonthYear(credential.expires),data);
+      else appendText('span','',lang==='id'?'Masa berlaku tidak dicantumkan':'Expiry not supplied',data);
+      if(credential.expires && credential.expires<currentMonth){
+        appendText('span','credential-status expired',lang==='id'?'Kedaluwarsa · historis':'Expired · historical',data);
+      }
+      card.append(data);
+      if(credential.credential_id)appendText('p','credential-id','ID: '+credential.credential_id,card);
+      if(credential.skills?.length)appendText('p','credential-skills',(lang==='id'?'Keahlian terkait: ':'Listed skills: ')+credential.skills.join(' · '),card);
+      grid.append(card);
+    }
+    section.append(grid);trainerGroups.append(section);
+  }
+  trainerCount.textContent=(lang==='id'?'Menampilkan ':'Showing ')+total+(lang==='id'?' kredensial pada ':' credentials across ')+groups.length+(lang==='id'?' bidang':' domains');
+}
+if(window.RH_TRAINER_DIRECTORY){
+  for(const group of window.RH_TRAINER_DIRECTORY.categories){
+    const option=document.createElement('option');option.value=group.key;
+    option.dataset.en=group.name_en;option.dataset.id=group.name_id;
+    option.textContent=group.name_en;trainerDomain.append(option);
+  }
+}
+trainerDomain.addEventListener('change',renderTrainer);
 
 const portfolioGrid=document.getElementById('portfolioGrid');
 const portfolioCount=document.getElementById('portfolioCount');
@@ -174,7 +291,7 @@ function renderPortfolio(){
   matched.slice(0,portfolioVisible).forEach(item=>{
     const article=document.createElement('article');article.className='portfolio-item'+(item.discipline==='FIRE'?' fire':'');
     const meta=document.createElement('div');meta.className='meta';
-    const kind=document.createElement('span');kind.className='kind';kind.textContent=item.discipline==='FIRE'?'FIRE PROTECTION':'MEP REFERENCE';
+    const kind=document.createElement('span');kind.className='kind';kind.textContent=item.discipline==='FIRE'?'FIRE PROTECTION':'MEP PROJECT';
     const year=document.createElement('span');year.textContent=String(item.year);meta.append(kind,year);article.append(meta);
     const title=document.createElement('h3');title.textContent=item.reference==='Private client'?(lang==='id'?'Klien perorangan':'Private client'):item.reference;article.append(title);
     const p=document.createElement('p');p.textContent=lang==='id'?item.facility_id:item.facility_en;article.append(p);
@@ -195,10 +312,15 @@ function renderPortfolio(){
 document.querySelectorAll('[data-portfolio-filter]').forEach(button=>button.addEventListener('click',()=>{
  portfolioCategory=button.dataset.portfolioFilter;portfolioVisible=12;
  document.querySelectorAll('[data-portfolio-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
- renderPortfolio();
+ const trainerMode=portfolioCategory==='TRAINER';
+ trainerPanel.hidden=!trainerMode;
+ portfolioProjects.hidden=trainerMode;
+ portfolioYearWrap.hidden=trainerMode;
+ if(trainerMode)renderTrainer();else renderPortfolio();
 }));
 portfolioYear.addEventListener('change',()=>{portfolioVisible=12;renderPortfolio()});
 portfolioMore.addEventListener('click',()=>{portfolioVisible+=12;renderPortfolio()});
 renderPortfolio();
+renderTrainer();
 </script>
 </body></html>
