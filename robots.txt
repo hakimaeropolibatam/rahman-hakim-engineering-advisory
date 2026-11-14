@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /data/
+
+Sitemap: https://summer-fire-6da6.hakim-aeropolibatam.workers.dev/sitemap.xml
