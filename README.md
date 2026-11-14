@@ -84,3 +84,12 @@ The portfolio now includes a distinct **Trainer & Credentials** filter, without 
 - Three credentials have an expiry before November 2026 and are flagged as historic/expired using the visitor's current date. Unspecified expiry does not mean confirmed active status.
 - This listing indicates expertise relevant to training, **not verified trainer employment, course-delivery records, trainer accreditation, or active regulated-course permission**.
 - For the GitHub → Cloudflare Workers build, `npm run build` must run before `npx wrangler deploy` so `dist/data/trainer.js` is included.
+
+
+## Website analytics, uptime and lead monitoring
+
+See [MONITORING.md](MONITORING.md) for the operating guide covering Cloudflare Web Analytics, Worker health metrics, UptimeRobot, Google Search Console, PageSpeed Insights, privacy, and enquiry handling.
+
+The site supports optional Cloudflare Web Analytics through the Cloudflare Workers Builds environment variable `CF_WEB_ANALYTICS_TOKEN`. Add the 32-character site beacon token obtained from the Cloudflare Web Analytics dashboard, then redeploy. Do not use a Cloudflare account API token. Without the site token, analytics remains disabled and the website still works normally.
+
+Contact links open WhatsApp and email with editable, prefilled enquiry messages. The floating WhatsApp widget is click-to-chat, not a WhatsApp Business API chatbot. Messages are sent only after the visitor chooses Send. No enquiry database is configured.
