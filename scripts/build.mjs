@@ -11,6 +11,7 @@ await cp('data/portfolio.js', 'dist/data/portfolio.js');
 await cp('data/trainer.js', 'dist/data/trainer.js');
 await cp('robots.txt', 'dist/robots.txt');
 await cp('sitemap.xml', 'dist/sitemap.xml');
+await cp('privacy.html', 'dist/privacy.html');
 
 // Optional Cloudflare Web Analytics beacon. Set CF_WEB_ANALYTICS_TOKEN
 // in the Cloudflare Workers Builds environment after enabling Web Analytics.
