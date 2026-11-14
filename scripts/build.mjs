@@ -18,7 +18,7 @@ const analyticsEnabled = /^[a-f0-9]{32}$/i.test(analyticsToken);
 if (analyticsEnabled) {
   const beacon = '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'' +
     JSON.stringify({ token: analyticsToken }) + '\'></script>';
-  html = html.replace('</head>', beacon + '\\n</head>');
+  html = html.replace('</head>', beacon + '\n</head>');
   await writeFile('dist/index.html', html, 'utf8');
 }
 
