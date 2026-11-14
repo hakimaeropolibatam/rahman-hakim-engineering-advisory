@@ -17,16 +17,18 @@ Note: Render free static sites have monthly bandwidth/build-minute allowances. U
 
 Official website source for **Rahman Hakim Engineering Advisory**, a principal-led technical advisory practice.
 
-**Brand promise:** *Independent Judgment. Evidence-Based Engineering.*
+**Brand promise:** *Independent Judgment & Evidence-Based Engineering*
 
 ## Pages and features
 
 - Responsive one-page layout inspired by the structure of Agency / Start Bootstrap, with original styling.
-- Sections: Home, Expertise, Typical Engagements, Approach, About, Contact.
+- Sections: Home, Expertise, Typical Engagements, Portfolio, Trainer & Credentials, Approach, Engineering Leadership, Contact.
 - Five services: Fire Protection & Assurance, MEP Forensic Engineering, Risk & Safety Advisory, Engineering R&D, and Engineering Management.
 - English / Indonesian text switching.
-- Direct WhatsApp and email links. No visitor information is collected via forms.
-- Static HTML with inline CSS and JavaScript; no build system and no external scripts.
+- Direct WhatsApp and email links with editable, bilingual prefilled enquiry messages.
+- Floating WhatsApp click-to-chat widget with service information, quotation and project discussion shortcuts.
+- Optional Cloudflare Web Analytics beacon, activated by the CF_WEB_ANALYTICS_TOKEN build variable.
+- Static HTML with inline CSS and JavaScript; no application database, login, or visitor-submission form.
 
 ## Hosting: Cloudflare Pages (recommended)
 
@@ -68,7 +70,7 @@ For **Cloudflare Workers Builds**:
 4. Set the build command to `npm run build`, deploy command to `npx wrangler deploy`. Check that the Worker name in Cloudflare matches `wrangler.toml` (`summer-fire-6da6`).
 5. Save settings, trigger a build (or push a new Git commit), and inspect deployment logs before checking the URL above with `#portfolio`.
 
-The `scripts/build.mjs` file copies the source HTML, public logo, favicon and portfolio dataset to `dist/`, which Wrangler serves as static assets. This build intentionally excludes internal reference files.
+The `scripts/build.mjs` file copies the public HTML, approved assets, portfolio and trainer datasets, robots.txt, and sitemap.xml to dist/, which Wrangler serves as static assets. It also creates a script-hash Content Security Policy and response security headers. It optionally injects Cloudflare Web Analytics when CF_WEB_ANALYTICS_TOKEN is present.
 
 **Caution:** Connecting this repo and deploying it to an existing Worker replaces the Worker's currently deployed website. Review the live site and account settings first, and retain a backup if it includes additional features not present in this repo. This ChatGPT workflow can edit GitHub but cannot confirm Cloudflare credentials, settings or completed deploys without direct Cloudflare access.
 
@@ -93,3 +95,12 @@ See [MONITORING.md](MONITORING.md) for the operating guide covering Cloudflare W
 The site supports optional Cloudflare Web Analytics through the Cloudflare Workers Builds environment variable `CF_WEB_ANALYTICS_TOKEN`. Add the 32-character site beacon token obtained from the Cloudflare Web Analytics dashboard, then redeploy. Do not use a Cloudflare account API token. Without the site token, analytics remains disabled and the website still works normally.
 
 Contact links open WhatsApp and email with editable, prefilled enquiry messages. The floating WhatsApp widget is click-to-chat, not a WhatsApp Business API chatbot. Messages are sent only after the visitor chooses Send. No enquiry database is configured.
+
+
+## Contact and WhatsApp widget
+
+The floating WhatsApp widget is a **click-to-chat interface**, not an automated WhatsApp Business API bot. Visitors choose a topic; the website opens WhatsApp with a bilingual message identifying the website as the referral source. The visitor reviews and sends the message. Email links open the visitor's email application with a prepared subject and message body. No enquiry is stored by the website.
+
+## Traffic and monitoring
+
+See [MONITORING.md](MONITORING.md) for setup instructions. Cloudflare Web Analytics is optional until the site beacon token is configured in Workers Builds as CF_WEB_ANALYTICS_TOKEN. Cloudflare Worker request metrics are operational metrics and should not be interpreted as unique visitors. UptimeRobot, Google Search Console, and PageSpeed Insights provide complementary monitoring.
