@@ -9,6 +9,8 @@ await cp('index.html', 'dist/index.html');
 await cp('assets', 'dist/assets', { recursive: true });
 await cp('data/portfolio.js', 'dist/data/portfolio.js');
 await cp('data/trainer.js', 'dist/data/trainer.js');
+await cp('robots.txt', 'dist/robots.txt');
+await cp('sitemap.xml', 'dist/sitemap.xml');
 
 // Optional Cloudflare Web Analytics beacon. Set CF_WEB_ANALYTICS_TOKEN
 // in the Cloudflare Workers Builds environment after enabling Web Analytics.
