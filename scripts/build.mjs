@@ -10,9 +10,20 @@ await cp('assets', 'dist/assets', { recursive: true });
 await cp('data/portfolio.js', 'dist/data/portfolio.js');
 await cp('data/trainer.js', 'dist/data/trainer.js');
 
+// Optional Cloudflare Web Analytics beacon. Set CF_WEB_ANALYTICS_TOKEN
+// in the Cloudflare Workers Builds environment after enabling Web Analytics.
+let html = await readFile('index.html', 'utf8');
+const analyticsToken = process.env.CF_WEB_ANALYTICS_TOKEN || '';
+const analyticsEnabled = /^[a-f0-9]{32}$/i.test(analyticsToken);
+if (analyticsEnabled) {
+  const beacon = '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'' +
+    JSON.stringify({ token: analyticsToken }) + '\'></script>';
+  html = html.replace('</head>', beacon + '\\n</head>');
+  await writeFile('dist/index.html', html, 'utf8');
+}
+
 // The site uses one inline script for its UI. Hash its exact bytes so the
 // browser can run it while blocking all other unauthorized inline scripts.
-const html = await readFile('index.html', 'utf8');
 const inlineScripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
 if (inlineScripts.length !== 1) {
   throw new Error('Expected exactly one inline script. Review CSP before deployment.');
@@ -23,11 +34,11 @@ const scriptHash = createHash('sha256').update(inlineScripts[0][1]).digest('base
 // dist/. If using a Worker fetch handler instead, headers must be set there.
 const csp = [
   "default-src 'none'",
-  "script-src 'self' 'sha256-" + scriptHash + "'",
+  "script-src 'self' 'sha256-" + scriptHash + "'" + (analyticsEnabled ? " https://static.cloudflareinsights.com" : ""),
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data:",
   "font-src 'self'",
-  "connect-src 'self'",
+  "connect-src 'self'" + (analyticsEnabled ? " https://cloudflareinsights.com" : ""),
   "base-uri 'none'",
   "object-src 'none'",
   "frame-ancestors 'none'",
@@ -44,4 +55,4 @@ const securityHeaders = [
   '',
 ].join('\n');
 await writeFile('dist/_headers', securityHeaders, 'utf8');
-console.log('Static site built with a script-hash CSP and security response headers.');
+console.log('Static site built with security headers. Cloudflare Web Analytics: ' + (analyticsEnabled ? 'enabled' : 'not configured; set CF_WEB_ANALYTICS_TOKEN'));
